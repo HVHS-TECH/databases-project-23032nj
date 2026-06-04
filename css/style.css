@@ -1,0 +1,75 @@
+/* copy and pasted to center canvas, will modify later on */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #facdd1;
+}
+
+.container {
+ width: 550px;
+ height: 600px;
+ background-color: #bfd7fa;
+ padding: 3px;
+ border: #eb7184;
+ border-width: 10px;
+}
+
+.content {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.headerstyle {
+ font-family: "Atma", sans-serif;
+ text-align: center;
+ font-size: 50px;
+}
+
+.secondheaderstyle {
+ font-family: "Atma", sans-serif;
+ text-align: center;
+ font-size: 30px;
+}
+
+.textstyle {
+ font-family:Georgia, Times, 'Times New Roman', serif;
+ font-size: 20px;
+ text-align: center;
+ color: black;
+}
+
+button {
+ width: 100px;
+ font-family: "Atma", sans-serif;
+ font-size: 20px;
+ text-align: center;
+ background-color: #eb7184;
+ padding: 5px;
+}
+
+button:hover {
+  background-color: #e75b70;
+}
+
+.containerEnd {
+ width: 550px;
+ height: 600px;
+ background-color: #bfd7fa;
+ padding: 3px;
+ position: absolute;
+}
+
+#gameEnd {
+ display: none;
+
+}
+
+#complete {
+display: none;
+}
