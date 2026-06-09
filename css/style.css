@@ -25,6 +25,22 @@ body {
  align-items: center;
 }
 
+.containerOne {
+ width: 1000px;
+ height: 700px;
+ background-color: #bfd7fa;
+ padding: 3px;
+ border: #eb7184;
+ border-width: 10px;
+}
+
+.contentOne {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
 .headerstyle {
  font-family: "Atma", sans-serif;
  text-align: center;
@@ -72,4 +88,9 @@ button:hover {
 
 #complete {
 display: none;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
 }
