@@ -16,6 +16,10 @@ function endGame(_player, _obstacle){
     player.remove();
     obstacles.removeAll();
     // Put your database writes here:
+    console.log(userUID)
+    firebase.database().ref('/gameScores/gameOne/'+userUID).update({
+      userScore: score
+    })
 
 
 

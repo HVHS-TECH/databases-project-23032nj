@@ -6,6 +6,7 @@
 console.log("Running Nia's Games")
 
 //Constants
+const HTML_OUTPUT = document.getElementById("databaseOutput");
 
 
 //Variables
@@ -42,6 +43,7 @@ function handleLogin(_user) {
             console.log(userEmail)
             console.log(userUID)
             console.log(userProfilePicture)
+            HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
             userLoggedIn = true
         } else {
             console.log("User is not logged in, logging the user in now")
@@ -64,6 +66,7 @@ function popupLogin() {
     console.log(userEmail)
     console.log(userUID)
     console.log(userProfilePicture)
+    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
     userLoggedIn = true
 })
 }
@@ -75,10 +78,23 @@ function popupLogin() {
 function submitUserDetailsForm() {
     //collect and store the users username and age
     if(userLoggedIn == true) {
-        const userName = document.getElementById("name").value;
+        var userName = document.getElementById("name").value;
         const userAge = document.getElementById("age").value;
+        userName = userName.trim();
+        if (userName == "") {
+        alert("Please enter a name");
+        return;
+        }
         console.log(userName)
         console.log(userAge)
+        firebase.database().ref('/users/'+userUID).update ({
+            Name: userDisplayName,
+            gameName: userName,
+            Age:userAge,
+            Email: userEmail,
+            profilePicture: userProfilePicture
+        })
+
 
         saveUserInfo()
         userFormSubmitted = true;
