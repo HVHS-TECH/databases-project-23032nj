@@ -194,6 +194,9 @@ function blockHit() {
     blockCreateRound = 0;
     //revealing the endscreen
     gameEnd.style.display = "block";
+      firebase.database().ref('/gameScores/blockBreaker/'+userUID).update({
+      userScore: score
+    })
   }
 
 /*******************************************************/

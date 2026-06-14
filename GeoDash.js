@@ -17,12 +17,9 @@ function endGame(_player, _obstacle){
     obstacles.removeAll();
     // Put your database writes here:
     console.log(userUID)
-    firebase.database().ref('/gameScores/gameOne/'+userUID).update({
-      userScore: score
+    firebase.database().ref('/gameScores/geoDash/'+userUID).update({
+      userDisplayName: score
     })
-
-
-
 }
 
 
