@@ -18,7 +18,7 @@ function endGame(_player, _obstacle){
     // Put your database writes here:
     console.log(userUID)
     firebase.database().ref('/gameScores/geoDash/'+userUID).update({
-      userDisplayName: score
+      userScore: score
     })
 }
 
