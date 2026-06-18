@@ -17,7 +17,7 @@ function displayBlockBreakerLeaderboard(snapshot) {
   snapshot.forEach(showscore)
 }
 
-function showcore(child) {
+function showscore(child) {
   //console.log(child.val());
   console.log(child.key+" got ", child.val(), "points");
   console.log(child.val())
