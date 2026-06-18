@@ -11,15 +11,38 @@ console.log("Running the game");
 
 // End game code
 function endGame(_player, _obstacle){
+var userPastScoreFinal;
+
     console.log("Game ended, you got "+score+" points.")
     screenSelector = "end";
     player.remove();
     obstacles.removeAll();
     // Put your database writes here:
     console.log(userUID)
+    firebase.database().ref('/gameScores/geoDash/'+userUID).once('value', displayScore, fb_readError);
+
+    function displayScore(snapshot) {
+    var userPastScore = snapshot.val();
+    var userPastScoreFinal = userPastScore.userScore
+    console.log(userPastScoreFinal)
+     }
+
+     function fb_readError(error) {
+    console.log("There was an error reading the message");
+    console.error(error);
+    }
+
+
+
+
+
+
+
+    if(userPastScoreFinal < score) {
     firebase.database().ref('/gameScores/geoDash/'+userUID).update({
       userScore: score
     })
+    } 
 }
 
 

@@ -5,12 +5,30 @@
 *************************************/
 
 //constants
-const HTML_OUTPUT_LEADERBOARD = document.getElementById("databaseOutputLeaderboard");
+const HTML_OUTPUT_LEADERBOARD_ONE = document.getElementById("databaseOutputLeaderboardOne");
+const HTML_OUTPUT_LEADERBOARD_TWO = document.getElementById("databaseOutputLeaderboardTwo");
 
+
+function readGeoDashLeaderboard() {
+    console.log("Reading sorted high scores");
+    firebase.database().ref('/gameScores/geoDash').orderByChild('userScore').limitToLast(3).once('value', displayGeoDashLeaderboard, fb_readError);
+}
+
+function displayGeoDashLeaderboard(snapshot) {
+  snapshot.forEach(showscore)
+}
+
+function showscore(child) {
+  //console.log(child.val());
+  console.log(child.key+" got ", child.val(), "points");
+  HTML_OUTPUT_LEADERBOARD_ONE.innerHTML += "<p> " + child.key+": " + child.val().userScore + " <p>"
+}
+
+//Block Breaker Leaderboard
 
 function readBlockBreakerLeaderboard() {
     console.log("Reading sorted high scores");
-    firebase.database().ref('/gameScores/geoDash').orderByValue().limitToLast(3).once('value', displayBlockBreakerLeaderboard, fb_readError);
+    firebase.database().ref('/gameScores/blockBreaker').orderByChild('userScore').limitToLast(3).once('value', displayBlockBreakerLeaderboard, fb_readError);
 }
 
 function displayBlockBreakerLeaderboard(snapshot) {
@@ -21,14 +39,10 @@ function showscore(child) {
   //console.log(child.val());
   console.log(child.key+" got ", child.val(), "points");
   console.log(child.val())
-  HTML_OUTPUT_LEADERBOARD.innerHTML += "<p> " + child.key+": " + child.val().userScore + " <p>"
-
+  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + child.key+": " + child.val().userScore + " <p>"
 }
 
 function fb_readError(error) {
   console.log("There was an error reading the message");
   console.error(error);
 }
-
-
-

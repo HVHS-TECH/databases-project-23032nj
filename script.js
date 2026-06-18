@@ -94,12 +94,18 @@ function submitUserDetailsForm() {
             Email: userEmail,
             profilePicture: userProfilePicture
         })
-
-
         saveUserInfo()
         userFormSubmitted = true;
     } else {
         alert("Please log in before registering")
+    }
+}
+
+function gameSelection() {
+    if(userFormSubmitted = true) {
+        window.location.href = 'game-selection.html'
+    } else {
+        alert("Please log in and submit your details before playing the games")
     }
 }
 
