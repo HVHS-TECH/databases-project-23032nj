@@ -41,6 +41,20 @@ body {
  align-items: center;
 }
 
+.containerTest {
+ display: grid;
+ gap: 50px 50px;
+ grid-template-columns: auto auto;
+ grid-template-rows: 200px auto auto;
+ background-color: #bfd7fa;
+}
+
+ .test {
+  grid-column: 1 / 4;
+  grid-row: 1 / 3;
+  text-align: center;
+ }
+
 .headerstyle {
  font-family: "Atma", sans-serif;
  text-align: center;

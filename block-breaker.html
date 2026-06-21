@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Block Breaker! </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="assets/images/ballimg.png">
 
-  
+
   <!-- stylesheets *******************************************-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atma">
 
 
   <!-- P5.js & P5.play ***************************************-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js" integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"
+    integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js"
+    integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://p5play.org/v3/planck.min.js"></script>
   <script src="https://p5play.org/v3/p5play.js"></script>
 
-    <!-- firebase start ****************************************-->
+  <!-- firebase start ****************************************-->
   <!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
   <!-- Add Firebase products that you want to use -->
@@ -26,11 +31,11 @@
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
   <!-- firebase end ******************************************-->
-   
+
   <!-- JQUERY ************************************************-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="setup.js"></script>
-  <script src="authenticate.js"> </script>
+  <script src="js/setup.js"></script>
+  <script src="js/authenticate.js"> </script>
 
 
 </head>
@@ -41,23 +46,24 @@ Body
 
 <body>
 
- <div class="container"> 
-  <div class="content">
-   <h1 class="headerstyle"> Block Breaker!!! </h1>
-   <h2 class="secondheaderstyle"> Rules: </h2>
-   <p class="textstyle"> Press Space to start the ball moving. <br>
-                         Use arrow keys or 'a' and 'd' to move the platform left & right. <br> 
-                         Try to get the ball to hit as many blocks as possible. <br>
-                         One block = 1 point. <br>
-                         Purple blocks are worth 5 points. <br>
-                         Don't let the ball touch the ground. 
-   </p>
-   <p class="textstyle"> Good luck!! </p>
-   <button onclick="location.href='block-breaker-run.html'"> Start </button>
+  <div class="container">
+    <div class="content">
+      <h1 class="headerstyle"> Block Breaker!!! </h1>
+      <h2 class="secondheaderstyle"> Rules: </h2>
+      <p class="textstyle"> Press Space to start the ball moving. <br>
+        Use arrow keys or 'a' and 'd' to move the platform left & right. <br>
+        Try to get the ball to hit as many blocks as possible. <br>
+        One block = 1 point. <br>
+        Purple blocks are worth 5 points. <br>
+        Don't let the ball touch the ground.
+      </p>
+      <p class="textstyle"> Good luck!! </p>
+      <button onclick="location.href='block-breaker-run.html'"> Start </button>
+    </div>
   </div>
- </div>
 
 </body>
+
 </html>
 <!--*************************************************************
   END OF INDEX.HTML

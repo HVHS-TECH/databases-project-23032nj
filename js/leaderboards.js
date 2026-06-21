@@ -11,6 +11,7 @@ const HTML_OUTPUT_LEADERBOARD_TWO = document.getElementById("databaseOutputLeade
 
 function readGeoDashLeaderboard() {
     console.log("Reading sorted high scores");
+    HTML_OUTPUT_LEADERBOARD_ONE.innerHTML = "<p> Geo Dash Leaderboard </p>"
     firebase.database().ref('/gameScores/geoDash').orderByChild('userScore').limitToLast(3).once('value', displayGeoDashLeaderboard, fb_readError);
 }
 
@@ -19,7 +20,6 @@ function displayGeoDashLeaderboard(snapshot) {
 }
 
 function showscore(child) {
-  //console.log(child.val());
   console.log(child.key+" got ", child.val(), "points");
   HTML_OUTPUT_LEADERBOARD_ONE.innerHTML += "<p> " + child.key+": " + child.val().userScore + " <p>"
 }

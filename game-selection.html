@@ -40,24 +40,24 @@ Body
 
  <div class="containerOne"> 
   <div class="contentOne">
-   <h1 class="headerstyle"> Pick a Game </h1>
-      <P> <div id="databaseOutputLogin"></div> </P>
+   <h1 class="headerstyle" class="test"> Pick a Game </h1>
+      <P> <div id="databaseOutputLogin" class="test"></div> </P>
 
-   <button onclick="location.href='block-breaker.html'"> Block Breaker </button>
-   <button onclick="location.href='geo-dash.html'"> Geo Dash </button>
+   <button onclick="location.href='block-breaker.html'" class="test1"> Block Breaker </button>
+   <button onclick="location.href='geo-dash.html'" class="test2"> Geo Dash </button>
 
-   <button onclick="readGeoDashLeaderboard()"> Geo Dash Leaderboard</button>
-   <P> <div id="databaseOutputLeaderboardOne"></div> </P>
+   <button onclick="readGeoDashLeaderboard()" class="test3"> Geo Dash Leaderboard</button>
+   <P> <div id="databaseOutputLeaderboardOne" class="test3"></div> </P>
 
-   <button onclick="readBlockBreakerLeaderboard()"> Block Breaker Leaderboard</button>
-   <P> <div id="databaseOutputLeaderboardTwo"></div> </P>
+   <button onclick="readBlockBreakerLeaderboard()" class="test4"> Block Breaker Leaderboard</button>
+   <P> <div id="databaseOutputLeaderboardTwo" class="test4"></div> </P>
 
-  </div>
+   </div>
  </div>
 
-  <script src="setup.js"></script>
-  <script src="authenticate.js"> </script>
-    <script src="leaderboards.js"> </script>
+  <script src="js/setup.js"></script>
+  <script src="js/authenticate.js"> </script>
+  <script src="js/leaderboards.js"> </script>
 
 
 </body>
