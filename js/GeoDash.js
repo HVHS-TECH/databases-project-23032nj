@@ -18,22 +18,8 @@ function endGame(_player, _obstacle) {
     player.remove();
     obstacles.removeAll();
     // Put your database writes here:
-    firebase.database().ref('/gameScores/geoDash/' + userUID).once('value', displayScore, fb_readError);
+    fb_writeGeoDashScore(score);
 
-    function displayScore(snapshot) {
-        var userPastScore = snapshot.val().userScore;
-        console.log(userPastScore)
-        if (userPastScore < score) {
-            firebase.database().ref('/gameScores/geoDash/' + userUID).update({
-                userScore: score
-            })
-        }
-    }
-
-    function fb_readError(error) {
-        console.log("There was an error reading the message");
-        console.error(error);
-    }
 }
 
 

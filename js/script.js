@@ -6,7 +6,9 @@
 console.log("Running Nia's Games")
 
 //Constants
-const HTML_OUTPUT = document.getElementById("databaseOutput");
+const HTML_OUTPUT_LOGIN = document.getElementById("databaseOutputLogin");
+const HTML_OUTPUT_SUBMIT = document.getElementById("databaseOutputSubmit");
+
 
 
 //Variables
@@ -43,7 +45,7 @@ function handleLogin(_user) {
             console.log(userEmail)
             console.log(userUID)
             console.log(userProfilePicture)
-            HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
+            HTML_OUTPUT_LOGIN.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
             userLoggedIn = true
         } else {
             console.log("User is not logged in, logging the user in now")
@@ -66,7 +68,7 @@ function popupLogin() {
     console.log(userEmail)
     console.log(userUID)
     console.log(userProfilePicture)
-    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
+    HTML_OUTPUT_LOGIN.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
     userLoggedIn = true
 })
 }
@@ -96,13 +98,14 @@ function submitUserDetailsForm() {
         })
         saveUserInfo()
         userFormSubmitted = true;
+        HTML_OUTPUT_SUBMIT.innerHTML += "<p> Thank you for submitting " + userName + "!! You can now select a game! </p>"
     } else {
         alert("Please log in before registering")
     }
 }
 
 function gameSelection() {
-    if(userFormSubmitted = true) {
+    if(userFormSubmitted == true) {
         window.location.href = 'game-selection.html'
     } else {
         alert("Please log in and submit your details before playing the games")

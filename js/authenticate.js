@@ -1,5 +1,5 @@
 const HTML_OUTPUT = document.getElementById("databaseOutputLogin");
-console.log(HTML_OUTPUT)
+
 //Variables
 let userLoggedIn = false
 let userFormSubmitted = false
@@ -12,6 +12,7 @@ let userProfilePicture
 
 let userName;
 let userAge;
+
 authenticateLogin()
 
 function authenticateLogin() {
