@@ -17,7 +17,7 @@ function readGeoDashLeaderboard() {
 }
 
 function displayGeoDashLeaderboard(snapshot) {
-  var 
+  var userUidList;
   var userUidList = Object.keys(snapshot);
   console.log(userUidList);
 
@@ -43,25 +43,6 @@ function showscore(child) {
   console.log(child.key + " got ", child.val(), "points");
   HTML_OUTPUT_LEADERBOARD_ONE.innerHTML += "<p> " + child.key + ": " + child.val().userScore + " <p>"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

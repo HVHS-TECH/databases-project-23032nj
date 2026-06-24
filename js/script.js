@@ -1,3 +1,12 @@
+/************************************* 
+// script.js
+// written by Nia 
+// Nia's Games
+*************************************/
+
+/**********************************
+// checkUser()
+***********************************/
 function checkUser() {
     firebase.database().ref('/users/' + userUID).once('value', displayUsers, fb_readError);
 }

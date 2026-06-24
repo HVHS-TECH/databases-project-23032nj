@@ -1,4 +1,10 @@
+/************************************* 
+// writeScores.js
+// written by Nia 
+// Nia's Games
+*************************************/
 
+//Writes the users Geo Dash score to the database, if it's higher than the users previous score
 function fb_writeGeoDashScore() {
     firebase.database().ref('/gameScores/geoDash/' + userUID).once('value', displayScore, fb_readError);
 
@@ -22,6 +28,7 @@ function fb_writeGeoDashScore() {
 
 }
 
+//Writes the users Block Breaker score to the database, if it's higher than the users previous score
 function fb_writeBlockBreakerScore() {
     firebase.database().ref('/gameScores/blockBreaker/' + userUID).once('value', displayScore, fb_readError);
 

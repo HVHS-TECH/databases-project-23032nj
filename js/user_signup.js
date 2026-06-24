@@ -1,23 +1,11 @@
 /************************************* 
-// script.js
+// user_selection.js
 // written by Nia 
 // Nia's Games
 *************************************/
-console.log("Running Nia's Games")
-
-//Constants
-const HTML_OUTPUT_SUBMIT = document.getElementById("databaseOutputSubmit");
 
 //Variables
-let userFormSubmitted = false
-let userRegistered = false
-
-let userDisplayName;
-let userEmail;
-let userUID;
-let userProfilePicture
-
-let userName;
+let gameName;
 let userAge;
 
 /**********************************
@@ -26,28 +14,22 @@ let userAge;
 
 function submitUserDetailsForm() {
     //collect and store the users username and age
-        var userName = document.getElementById("name").value;
-        const userAge = document.getElementById("age").value;
-        userName = userName.trim();
-        if (userName == "") {
+    userAge = document.getElementById("age").value;
+    gameName = document.getElementById("name").value;
+    gameName = gameName.trim();
+    if (gameName == "") {
         alert("Please enter a name");
         return;
-        }
-        console.log(userName)
-        console.log(userAge)
-        firebase.database().ref('/users/'+userUID).update ({
-            gameName: userName,
-            Age:userAge,
-        })
-        userFormSubmitted = true;
-        HTML_OUTPUT_SUBMIT.innerHTML += "<p> Thank you for submitting " + userName + "!! You can now select a game! </p>"
-
-}
-
-function gameSelection() {
-    if(userFormSubmitted == true) {
-        window.location.href = 'game-selection.html'
-    } else {
-        alert("Please log in and submit your details before playing the games")
     }
+
+    //save the users info from login, and form to the database
+    firebase.database().ref('/users/' + userUID).update({
+        name: userDisplayName,
+        gameName: gameName,
+        age: userAge,
+        email: userEmail,
+        profilePicture: userProfilePicture
+    })
+
+    window.location.href = "game-selection.html"
 }

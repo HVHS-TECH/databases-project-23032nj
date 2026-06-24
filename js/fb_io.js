@@ -1,3 +1,9 @@
+/************************************* 
+// fb_io.js
+// written by Nia 
+// Nia's Games
+*************************************/
+
 //Constants
 const HTML_OUTPUT = document.getElementById("databaseOutputLogin");
 
@@ -8,8 +14,6 @@ let userEmail;
 let userUID;
 let userProfilePicture
 
-let userName;
-let userAge;
 
 /**********************************
 // authenticateLogin()
@@ -28,23 +32,29 @@ function handleLogin(_user) {
         userEmail = GLOBAL_user.email
         userUID = GLOBAL_user.uid
         userProfilePicture = GLOBAL_user.photoURL
-        console.log(userDisplayName)
         console.log(userEmail)
-        console.log(userUID)
-        console.log(userProfilePicture)
 
         //if the user in on the login page, check if they're already in the database
         if (window.location.pathname.endsWith('/')) {
             console.log('checking')
             checkUser()
         }
+
+        //if the user is on the game selection page, welcome them by their name  
+        if (window.location.pathname.endsWith('/game-selection.html')) {
+            writeWelcome();
+        }
+
     } else {
         console.log("User is not logged in, logging the user in now")
         popupLogin();
     }
 }
 
-
+/**********************************
+// popupLogin()
+// error check 
+***********************************/
 function popupLogin() {
     var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -55,10 +65,16 @@ function popupLogin() {
         userEmail = GLOBAL_user.email
         userUID = GLOBAL_user.uid
         userProfilePicture = GLOBAL_user.photoURL
-        userLoggedIn = true
     })
 }
 
+/**********************************
+// writeWelcome()
+// welcomes the user
+***********************************/
+function writeWelcome() {
+    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
+}
 
 /**********************************
 // fb_readError()
@@ -68,29 +84,3 @@ function fb_readError(error) {
     console.log("There was an error reading the message");
     console.error(error);
 }
-
-
-//if the user is on the game selection page, welcome them by their name  
-function welcomeUser() {
-    if (window.location.pathname.endsWith('/game-selection.html')) {
-        writeWelcome();
-    }
-}
-
-/**********************************
-// writeWelcome()
-// welcomes the user
-***********************************/
-function writeWelcome() {
-    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
-
-}
-
-
-
-
-//if the user is already in the database, send them straight to the game selection page
-//if (window.location.pathname.endsWith('/index.html' && userLoggedIn == true)) {
-//  window.location.href = "game-selection.html"
-//}
-
