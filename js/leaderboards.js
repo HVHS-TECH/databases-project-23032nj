@@ -48,7 +48,10 @@ function showscore(child) {
 
 
 
-//Block Breaker Leaderboard
+/***************************************************************
+// readBlockBreakerLeaderboard()
+// reads and displays the high scores for the block breaker game
+***************************************************************/
 
 function readBlockBreakerLeaderboard() {
   console.log("Reading sorted high scores");
@@ -60,12 +63,8 @@ function displayBlockBreakerLeaderboard(snapshot) {
 }
 
 function showscore(child) {
-  console.log(child.key + " got ", child.val(), "points");
+  //console.log(child.key + " got ", child.val(), "points");
   console.log(child.val())
   HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + child.key + ": " + child.val().userScore + " <p>"
 }
 
-function fb_readError(error) {
-  console.log("There was an error reading the message");
-  console.error(error);
-}

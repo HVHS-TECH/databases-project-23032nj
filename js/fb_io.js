@@ -35,7 +35,7 @@ function handleLogin(_user) {
         console.log(userEmail)
 
         //if the user in on the login page, check if they're already in the database
-        if (window.location.pathname.endsWith('/')) {
+        if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
             console.log('checking')
             checkUser()
         }
