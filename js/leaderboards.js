@@ -8,6 +8,8 @@
 const HTML_OUTPUT_LEADERBOARD_ONE = document.getElementById("databaseOutputLeaderboardOne");
 const HTML_OUTPUT_LEADERBOARD_TWO = document.getElementById("databaseOutputLeaderboardTwo");
 
+//    firebase.database().ref('/gameScores/geoDash'/userUidList[i]).once('value',  fb_readError);
+
 //Geo Dash Leaderboard
 function readGeoDashLeaderboard() {
   console.log("Reading sorted high scores");
@@ -15,20 +17,55 @@ function readGeoDashLeaderboard() {
 }
 
 function displayGeoDashLeaderboard(snapshot) {
+  var 
   var userUidList = Object.keys(snapshot);
   console.log(userUidList);
 
   for (i = 0; i < userUidList.Length; i++) {
-    firebase.database().ref('/gameScores/geoDash'/userUidList[i]).once('value',  fb_readError);
+    var currentUserUid = userUidList[i]
+    var currentUserInfo = firebase.database().ref('users/currentUserUid').once('value', fb_error,)
+    console.log(currentUserInfo)
 
   };
-  snapshot.forEach(showscore)
+
+
+
+
+
+
+
+
+
+  //snapshot.forEach(showscore)
 }
 
 function showscore(child) {
   console.log(child.key + " got ", child.val(), "points");
   HTML_OUTPUT_LEADERBOARD_ONE.innerHTML += "<p> " + child.key + ": " + child.val().userScore + " <p>"
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Block Breaker Leaderboard
 
