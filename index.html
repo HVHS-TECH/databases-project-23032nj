@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title> Nia's Games </title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="assets/images/ballimg.png">
 
-  
+
   <!-- stylesheets *******************************************-->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atma">
@@ -21,15 +22,20 @@
   <!-- firebase end ******************************************-->
 
   <!-- P5.js & P5.play ***************************************-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js" integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"
+    integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js"
+    integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://p5play.org/v3/planck.min.js"></script>
   <script src="https://p5play.org/v3/p5play.js"></script>
 
   <!-- JQUERY ************************************************-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/setup.js"></script>
-
+  <script src="js/fb_io.js"> </script>
+  <script src="js/script.js"> </script>
 
 </head>
 
@@ -39,36 +45,25 @@ Body
 
 <body>
 
- <div class="containerOne"> 
-  <div class="contentOne">
-   <h1 class="headerstyle"> Registration </h1>
-   <h2 class="secondheaderstyle"> Please login and fill out the form</h2>
-   <button onclick="authenticateLogin()"> Login </button>
-   <P> <div id="databaseOutputLogin"></div> </P>
+  <div class="containerOne">
+    <div class="contentOne">
+      <h1 class="headerstyle"> Nia's Games </h1>
+      <h2 class="secondheaderstyle"> Please login!!</h2>
+      <button onclick="authenticateLogin()"> Login </button>
+      <P>
+      <div id="databaseOutputLogin"></div>
+      </P>
 
-   <h2 class="secondheaderstyle"> Form </h2>
+      <button onclick="location.href='user-signup.html'"> User Signup </button>
 
-   <form id="userDetailsForm">
-      <label for="name"> Username:</label>
-      <input type="text" id="name" name="name" required />
+      <button onclick="location.href='game-selection.html'"> Game Selection </button>
 
-      <label for="age"> Age: </label>
-      <input type="number" id="age" name="age" min="10" max="80" required />
-    </form>
-    <button onclick="submitUserDetailsForm()"> Submit </button>
-    <P> <div id="databaseOutputSubmit"></div> </P>
-
-
-
-
-   <button onclick="gameSelection()"> Game Selection </button>
-
+    </div>
   </div>
- </div>
 
- <script src="js/script.js"></script>
 
 </body>
+
 </html>
 <!--*************************************************************
   END OF INDEX.HTML
