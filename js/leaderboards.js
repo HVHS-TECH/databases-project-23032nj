@@ -73,6 +73,11 @@ function displayBlockBreakerLeaderboard(snapshotScores) {
 function showscore(score) {
   var uid = score.key;
   var gameName = snapshotUsers.child(uid).val().gameName
+  var profilePicture = snapshotUsers.child(uid).val().profilePicture
+  console.log(profilePicture)
+
+
+  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src = profilePicture alt= "users profile picture" width="30px" height="30px"></img>'
   HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
 }
 
