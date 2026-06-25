@@ -1,5 +1,5 @@
 /************************************* 
-// leadeboards.js
+// leaderboards.js
 // written by Nia 
 // Nia's Games
 *************************************/
@@ -8,55 +8,35 @@
 const HTML_OUTPUT_LEADERBOARD_ONE = document.getElementById("databaseOutputLeaderboardOne");
 const HTML_OUTPUT_LEADERBOARD_TWO = document.getElementById("databaseOutputLeaderboardTwo");
 
-//    firebase.database().ref('/gameScores/geoDash'/userUidList[i]).once('value',  fb_readError);
-
-//Geo Dash Leaderboard
-function readGeoDashLeaderboard() {
-  console.log("Reading sorted high scores");
-  firebase.database().ref('/gameScores/geoDash').orderByChild('userScore').limitToLast(3).once('value', displayGeoDashLeaderboard, fb_readError);
-}
-
-function displayGeoDashLeaderboard(snapshot) {
-  var userUidList;
-  var userUidList = Object.keys(snapshot);
-  console.log(userUidList);
-
-  for (i = 0; i < userUidList.Length; i++) {
-    var currentUserUid = userUidList[i]
-    var currentUserInfo = firebase.database().ref('users/currentUserUid').once('value', fb_error,)
-    console.log(currentUserInfo)
-
-  };
-
-
-
-
-
-
-
-
-
-  //snapshot.forEach(showscore)
-}
-
-function showscore(child) {
-  console.log(child.key + " got ", child.val(), "points");
-  HTML_OUTPUT_LEADERBOARD_ONE.innerHTML += "<p> " + child.key + ": " + child.val().userScore + " <p>"
-}
-
-
-
-
-
-/***************************************************************
-// readBlockBreakerLeaderboard()
-// reads and displays the high scores for the block breaker game
-***************************************************************/
+//variables
+let gamePick;
+let gamePickHTML;
 var snapshotUsers;
-async function readBlockBreakerLeaderboard() {
+
+
+
+/***************************************************************************************************
+// reading leaderboards
+//readLeaderboard()
+// reads and displays the high scores for both games depending on which button has been clicked
+**************************************************************************************************/
+
+function readGeoDashLeaderboard() {
+gamePick = "geoDash";
+gamePickHTML = "HTML_OUTPUT_LEADERBOARD_ONE";
+readLeaderboard()
+}
+
+function readBlockBreakerLeaderboard() {
+  gamePick = "blockBreaker";
+  gamePickHTML = "HTML_OUTPUT_LEADERBOARD_TWO";
+  readLeaderboard();
+}
+
+async function readLeaderboard() {
   console.log("Reading sorted high scores");
   const snapshotScores = await firebase.database()
-    .ref('/gameScores/blockBreaker')
+    .ref('/gameScores/'+gamePick)
     .orderByChild('userScore')
     .limitToLast(3)
     .once('value');
@@ -76,8 +56,9 @@ function showscore(score) {
   var profilePicture = snapshotUsers.child(uid).val().profilePicture
   console.log(profilePicture)
 
-
-  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src = profilePicture alt= "users profile picture" width="30px" height="30px"></img>'
+  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
   HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
-}
 
+  //gamePickHTML.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="imageBorder" width="30px" height="30px"> </img>'
+  //gamePickHTML.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
+}

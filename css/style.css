@@ -108,3 +108,8 @@ label {
   display: block;
   margin-top: 1rem;
 }
+
+.profilePictureBorder {
+  border-radius: 80%;
+  object-fit: cover;
+}
