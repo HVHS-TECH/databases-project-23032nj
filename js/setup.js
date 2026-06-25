@@ -1,4 +1,10 @@
-  // Your web app's Firebase configuration
+/************************************* 
+// script.js
+// written by Nia 
+// Nia's Games
+*************************************/
+
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDpx2n8Un495Cdq2U07o_gX9Dv8BjzUmvQ",
   authDomain: "comp-2026-nia-jobanputra.firebaseapp.com",

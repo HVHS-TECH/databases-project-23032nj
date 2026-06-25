@@ -53,13 +53,21 @@ function showscore(child) {
 // reads and displays the high scores for the block breaker game
 ***************************************************************/
 
-function readBlockBreakerLeaderboard() {
+async function readBlockBreakerLeaderboard() {
   console.log("Reading sorted high scores");
-  firebase.database().ref('/gameScores/blockBreaker').orderByChild('userScore').limitToLast(3).once('value', displayBlockBreakerLeaderboard, fb_readError);
+  const snapshotScores = await firebase.database()
+    .ref('/gameScores/blockBreaker')
+    .orderByChild('userScore')
+    .limitToLast(3)
+    .once('value');
+
+  const snapshotUsers = await firebase.database().ref('/users').once('value')
+  console.log(snapshotUsers)
+    displayBlockBreakerLeaderboard(snapshotScores);    
 }
 
-function displayBlockBreakerLeaderboard(snapshot) {
-  snapshot.forEach(showscore)
+function displayBlockBreakerLeaderboard(snapshotScores) {
+  snapshotScores.forEach(showscore)
 }
 
 function showscore(child) {
