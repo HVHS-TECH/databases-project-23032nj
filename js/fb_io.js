@@ -32,7 +32,7 @@ function handleLogin(_user) {
         userEmail = GLOBAL_user.email
         userUID = GLOBAL_user.uid
         userProfilePicture = GLOBAL_user.photoURL
-        console.log(userEmail)
+        console.log(userUID)
 
         //if the user in on the login page, check if they're already in the database
         if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
