@@ -12,7 +12,7 @@ let userAge;
 // submitUserDetailsForm()
 ***********************************/
 
-function submitUserDetailsForm() {
+async function submitUserDetailsForm() {
     //collect and store the users username and age
     userAge = document.getElementById("age").value;
     gameName = document.getElementById("name").value;
@@ -23,7 +23,7 @@ function submitUserDetailsForm() {
     }
 
     //save the users info from login, and form to the database
-    firebase.database().ref('/users/' + userUID).update({
+    await firebase.database().ref('/users/' + userUID).set({
         name: userDisplayName,
         gameName: gameName,
         age: userAge,
