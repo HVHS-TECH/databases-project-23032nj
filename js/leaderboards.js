@@ -52,7 +52,7 @@ function showscore(child) {
 // readBlockBreakerLeaderboard()
 // reads and displays the high scores for the block breaker game
 ***************************************************************/
-
+var snapshotUsers;
 async function readBlockBreakerLeaderboard() {
   console.log("Reading sorted high scores");
   const snapshotScores = await firebase.database()
@@ -61,18 +61,18 @@ async function readBlockBreakerLeaderboard() {
     .limitToLast(3)
     .once('value');
 
-  const snapshotUsers = await firebase.database().ref('/users').once('value')
-  console.log(snapshotUsers)
-    displayBlockBreakerLeaderboard(snapshotScores);    
+  snapshotUsers = await firebase.database().ref('/users').once('value')
+  
+  displayBlockBreakerLeaderboard(snapshotScores);    
 }
 
 function displayBlockBreakerLeaderboard(snapshotScores) {
   snapshotScores.forEach(showscore)
 }
 
-function showscore(child) {
-  //console.log(child.key + " got ", child.val(), "points");
-  console.log(child.val())
-  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + child.key + ": " + child.val().userScore + " <p>"
+function showscore(score) {
+  var uid = score.key;
+  var gameName = snapshotUsers.child(uid).val().gameName
+  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
 }
 
