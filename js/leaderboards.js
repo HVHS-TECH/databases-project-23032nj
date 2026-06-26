@@ -38,7 +38,7 @@ async function readLeaderboard() {
   const snapshotScores = await firebase.database()
     .ref('/gameScores/'+gamePick)
     .orderByChild('userScore')
-    .limitToLast(3)
+    .limitToFirst(3)
     .once('value');
 
   snapshotUsers = await firebase.database().ref('/users').once('value')
