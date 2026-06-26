@@ -43,10 +43,10 @@ async function readLeaderboard() {
 
   snapshotUsers = await firebase.database().ref('/users').once('value')
   
-  displayBlockBreakerLeaderboard(snapshotScores);    
+  displayLeaderboard(snapshotScores);    
 }
 
-function displayBlockBreakerLeaderboard(snapshotScores) {
+function displayLeaderboard(snapshotScores) {
   snapshotScores.forEach(showscore)
 }
 
@@ -54,10 +54,10 @@ function showscore(score) {
   var uid = score.key;
   var gameName = snapshotUsers.child(uid).val().gameName
   var profilePicture = snapshotUsers.child(uid).val().profilePicture
-  console.log(profilePicture)
+  var displayScore = score.val().userScore * -1
 
   HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
-  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
+  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
 
   //gamePickHTML.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="imageBorder" width="30px" height="30px"> </img>'
   //gamePickHTML.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"

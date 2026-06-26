@@ -21,7 +21,7 @@ function fb_writeGeoDashScore() {
         console.log(userPastScore)
         if (userPastScore < score || userPastScore == 0) {
             firebase.database().ref('/gameScores/geoDash/' + userUID).update({
-                userScore: score
+                userScore: score * -1
             })
         }
     }
@@ -45,7 +45,7 @@ function fb_writeBlockBreakerScore() {
         console.log(userPastScore)
         if (userPastScore < score) {
             firebase.database().ref('/gameScores/blockBreaker/' + userUID).update({
-                userScore: score
+                userScore: score * -1
             })
         }
     }
