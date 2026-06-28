@@ -21,6 +21,10 @@ async function submitUserDetailsForm() {
         alert("Please enter a name");
         return;
     }
+    if (userAge == "") {
+        alert("Please enter an age");
+        return;
+    }
 
     //save the users info from login, and form to the database
     await firebase.database().ref('/users/' + userUID).set({
