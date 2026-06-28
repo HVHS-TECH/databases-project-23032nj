@@ -22,14 +22,16 @@ var snapshotUsers;
 **************************************************************************************************/
 
 function readGeoDashLeaderboard() {
-gamePick = "geoDash";
-gamePickHTML = "HTML_OUTPUT_LEADERBOARD_ONE";
-readLeaderboard()
+  gamePick = "geoDash";
+  gamePickHTML = HTML_OUTPUT_LEADERBOARD_ONE;
+  gamePickHTML.innerHTML = "";
+  readLeaderboard()
 }
 
 function readBlockBreakerLeaderboard() {
   gamePick = "blockBreaker";
-  gamePickHTML = "HTML_OUTPUT_LEADERBOARD_TWO";
+  gamePickHTML = HTML_OUTPUT_LEADERBOARD_TWO;
+  gamePickHTML.innerHTML = "";
   readLeaderboard();
 }
 
@@ -56,9 +58,9 @@ function showscore(score) {
   var profilePicture = snapshotUsers.child(uid).val().profilePicture
   var displayScore = score.val().userScore * -1
 
-  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
-  HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
+  //HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
+  //HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
 
-  //gamePickHTML.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="imageBorder" width="30px" height="30px"> </img>'
-  //gamePickHTML.innerHTML += "<p> " + gameName + ": " + score.val().userScore + " <p>"
+  gamePickHTML.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
+  gamePickHTML.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
 }
