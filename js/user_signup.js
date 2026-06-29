@@ -28,10 +28,10 @@ async function submitUserDetailsForm() {
 
     //save the users info from login, and form to the database
     await firebase.database().ref('/users/' + userUID).set({
-        Name: userDisplayName,
+        name: userDisplayName,
         gameName: gameName,
-        Age: userAge,
-        Email: userEmail,
+        age: userAge,
+        email: userEmail,
         profilePicture: userProfilePicture
     })
 
