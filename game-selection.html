@@ -46,28 +46,40 @@ Body
 <body>
 
   <div class="containerOne">
-    <div class="contentOne">
-      <h1 class="headerstyle" class="test"> Pick a Game </h1>
-      <div id="databaseOutputLogin" class="test"></div>
-      <br>
+
+    <h1 class="headerstyle" class="gameSelectionContainer"> Pick a Game </h1>
+    <div id="databaseOutputLogin" class="test"></div>
+    <br>
+
+    <!-- Start of grid -->
+    <div class="gameSelectionContainer">
+
+      <h2>Block Breaker</h2>
+
+      <h2>Geo Dash</h2>
+
+      <!-- Top left -->
+      <button onclick="location.href='block-breaker.html'" class="gameSelectionButton"> Block Breaker </button>
+
+      <!-- Top right -->
+      <button onclick="location.href='geo-dash.html'" class="gameSelectionButton"> Geo Dash </button>
 
 
-      <button onclick="location.href='block-breaker.html'" class="test1"> Block Breaker </button>
-      <br>
-      <button onclick="location.href='geo-dash.html'" class="test2"> Geo Dash </button>
-      <br>
+      <!-- Bottom left -->
+      <div>
+        <button onclick="readBlockBreakerLeaderboard()" class="gameSelectionButton">See Leaderboard</button>      
+        <div id="databaseOutputLeaderboardTwo" class="test4"></div>
+      </div>
 
-      <button onclick="readGeoDashLeaderboard()" class="test3"> Geo Dash Leaderboard</button>
-      <P>
-      <div id="databaseOutputLeaderboardOne" class="test3"></div>
-      </P>
+      <!-- Bottom right -->
+       <div>
+        <button onclick="readGeoDashLeaderboard()" class="gameSelectionButton">See Leaderboard</button>
+        <div id="databaseOutputLeaderboardOne" class="test3"></div>
+      </div>       
 
-      <button onclick="readBlockBreakerLeaderboard()" class="test4"> Block Breaker Leaderboard</button>
-      <P>
-      <div id="databaseOutputLeaderboardTwo" class="test4"></div>
-      </P>
-
+      
     </div>
+    <!-- End of grid -->
   </div>
 
 

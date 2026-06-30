@@ -10,77 +10,82 @@ body {
 }
 
 .container {
- width: 550px;
- height: 600px;
- background-color: #bfd7fa;
- padding: 3px;
- border: #eb7184;
- border-width: 10px;
+  width: 550px;
+  height: 600px;
+  background-color: #bfd7fa;
+  padding: 3px;
+  border: #eb7184;
+  border-width: 10px;
 }
 
 .content {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .containerOne {
- width: 1000px;
- height: 800px;
- background-color: #bfd7fa;
- padding: 3px;
- border: #eb7184;
- border-width: 10px;
+  width: 1000px;
+  height: 800px;
+  background-color: #bfd7fa;
+  padding: 3px;
+  border: #eb7184;
+  border-width: 10px;
 }
 
 .contentOne {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.containerTest {
- display: grid;
- gap: 50px 50px;
- grid-template-columns: auto auto;
- grid-template-rows: 200px auto auto;
- background-color: #bfd7fa;
+.gameSelectionContainer {
+  justify-items: center;
+  display: grid;
+  gap: 50px 50px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  background-color: #bfd7fa;
 }
 
- .test {
+.gameSelectionButton {
+  width: 200px;
+}
+
+.test {
   grid-column: 1 / 4;
   grid-row: 1 / 3;
   text-align: center;
- }
+}
 
 .headerstyle {
- font-family: "Atma", sans-serif;
- text-align: center;
- font-size: 50px;
+  font-family: "Atma", sans-serif;
+  text-align: center;
+  font-size: 50px;
 }
 
 .secondheaderstyle {
- font-family: "Atma", sans-serif;
- text-align: center;
- font-size: 30px;
+  font-family: "Atma", sans-serif;
+  text-align: center;
+  font-size: 30px;
 }
 
 .textstyle {
- font-family:Georgia, Times, 'Times New Roman', serif;
- font-size: 20px;
- text-align: center;
- color: black;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  text-align: center;
+  color: black;
 }
 
 button {
- width: 100px;
- font-family: "Atma", sans-serif;
- font-size: 20px;
- text-align: center;
- background-color: #eb7184;
- padding: 5px;
+  width: 100px;
+  font-family: "Atma", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-color: #eb7184;
+  padding: 5px;
 }
 
 button:hover {
@@ -88,20 +93,20 @@ button:hover {
 }
 
 .containerEnd {
- width: 550px;
- height: 600px;
- background-color: #bfd7fa;
- padding: 3px;
- position: absolute;
+  width: 550px;
+  height: 600px;
+  background-color: #bfd7fa;
+  padding: 3px;
+  position: absolute;
 }
 
 #gameEnd {
- display: none;
+  display: none;
 
 }
 
 #complete {
-display: none;
+  display: none;
 }
 
 label {
@@ -111,5 +116,4 @@ label {
 
 .profilePictureBorder {
   border-radius: 80%;
-  object-fit: cover;
 }

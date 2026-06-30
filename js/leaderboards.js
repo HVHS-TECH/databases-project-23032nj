@@ -60,6 +60,8 @@ function showscore(score) {
   //HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
   //HTML_OUTPUT_LEADERBOARD_TWO.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
 
-  gamePickHTML.innerHTML += '<img src=' + profilePicture + ' alt= "users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
-  gamePickHTML.innerHTML += "<p> " + gameName + ": " + displayScore + " <p>"
+  var html = '<p><img src=' + profilePicture + ' alt="users profile picture" class="profilePictureBorder" width="30px" height="30px"> </img>'
+  html += gameName + ": " + displayScore + " </p>";
+  gamePickHTML.innerHTML += html
+
 }
