@@ -43,15 +43,10 @@ function fb_writeBlockBreakerScore() {
             userPastScore = snapshot.val().userScore;
         }
         console.log(userPastScore)
-        if (userPastScore < score) {
+        if (userPastScore < score || userPastScore == 0) {
             firebase.database().ref('/gameScores/blockBreaker/' + userUID).update({
                 userScore: score * -1
             })
         }
     }
-}
-
-function fb_readError(error) {
-    console.log("There was an error reading the message");
-    console.error(error);
 }
