@@ -1,4 +1,3 @@
-/* copy and pasted to center canvas, will modify later on */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -23,41 +22,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.containerOne {
-  width: 1000px;
-  height: 100vh;
-  background-color: #bfd7fa;
-  padding: 3px;
-  border: #eb7184;
-  border-width: 10px;
-}
-
-.contentOne {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.gameSelectionContainer {
-  justify-items: center;
-  display: grid;
-  gap: 50px 50px;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  background-color: #bfd7fa;
-}
-
-.gameSelectionButton {
-  width: 200px;
-}
-
-.test {
-  grid-column: 1 / 4;
-  grid-row: 1 / 3;
-  text-align: center;
 }
 
 .headerstyle {
@@ -107,34 +71,4 @@ button:hover {
 
 #complete {
   display: none;
-}
-
-label {
-  display: block;
-  margin-top: 1rem;
-}
-
-.profilePictureBorder {
-  border-radius: 80%;
-}
-
-/* Signup form style */
-.userDetailsForm {
-  background-color: #a3c2f1;
-  border-radius: 20px;
-  padding: 30px;
-}
-
-.formLabel {
-  font-size: 18px;  
-}
-
-.formInput {
-  font-size: 18px;  
-  padding: 2px;
-  margin-top: 2px;
-}
-
-.submitButtonContainer {
-  margin-top: 20px;
 }

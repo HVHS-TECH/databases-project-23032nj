@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #facdd1;
+}
+
+.headerstyle {
+  font-family: "Atma", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+.secondheaderstyle {
+  font-family: "Atma", sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.textstyle {
+  text-align: center;
+  font-family: "Atma", sans-serif;
+}
+
+button {
+  width: 100px;
+  font-family: "Atma", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-color: #eb7184;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: #e75b70;
+}
+
+.containerOne {
+  width: 1000px;
+  height: 100vh;
+  background-color: #bfd7fa;
+  padding: 3px;
+  border: #eb7184;
+  border-width: 10px;
+}
+
+.contentOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameSelectionContainer {
+  justify-items: center;
+  display: grid;
+  gap: 50px 50px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  background-color: #bfd7fa;
+}
+
+.gameSelectionButton {
+  width: 200px;
+}
+
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.profilePictureBorder {
+  border-radius: 80%;
+}
+
+.userDetailsForm {
+  background-color: #a3c2f1;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.formLabel {
+  font-size: 18px;  
+}
+
+.formInput {
+  font-size: 18px;  
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.submitButtonContainer {
+  margin-top: 20px;
+}
