@@ -49,23 +49,25 @@ Body
     <div class="containerOne">
         <div class="contentOne">
             <h1 class="headerstyle"> Registration </h1>
-            <h2 class="secondheaderstyle"> Please fill out the form</h2>
+            
 
+            <div class="userDetailsForm">
+                <h2>Please fill out the form</h2>
 
-            <h2 class="secondheaderstyle"> Form </h2>
+                <form id="userDetailsForm">
+                    <label class="formLabel" for="name"> Username:</label>
+                    <input  class="formInput" type="text" id="name" name="name" required />
 
-            <form id="userDetailsForm">
-                <label for="name"> Username:</label>
-                <input type="text" id="name" name="name" required />
+                    <label class="formLabel" for="age"> Age: </label>
+                    <input class="formInput" type="number" id="age" name="age" min="10" max="80" required />
+                </form>
 
-                <label for="age"> Age: </label>
-                <input type="number" id="age" name="age" min="10" max="80" required />
-            </form>
-            <button onclick="submitUserDetailsForm()"> Submit </button>
-            <P>
-            <div id="databaseOutputSubmit"></div>
-            </P>
-
+                <div class="submitButtonContainer">
+                    <button onclick="submitUserDetailsForm()">Submit </button>
+                </div>                
+                
+            </div>
+            
         </div>
     </div>
 

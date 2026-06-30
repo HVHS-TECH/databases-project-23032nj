@@ -27,7 +27,7 @@ body {
 
 .containerOne {
   width: 1000px;
-  height: 800px;
+  height: 100vh;
   background-color: #bfd7fa;
   padding: 3px;
   border: #eb7184;
@@ -116,4 +116,25 @@ label {
 
 .profilePictureBorder {
   border-radius: 80%;
+}
+
+/* Signup form style */
+.userDetailsForm {
+  background-color: #a3c2f1;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.formLabel {
+  font-size: 18px;  
+}
+
+.formInput {
+  font-size: 18px;  
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.submitButtonContainer {
+  margin-top: 20px;
 }
