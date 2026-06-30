@@ -16,7 +16,7 @@ function fb_writeGeoDashScore() {
             userPastScore = 0
         }
         else {
-            userPastScore = snapshot.val().userScore;
+            userPastScore = snapshot.val().userScore * -1;
         }
         console.log(userPastScore)
         if (userPastScore < score || userPastScore == 0) {
@@ -40,7 +40,7 @@ function fb_writeBlockBreakerScore() {
             userPastScore = 0
         }
         else {
-            userPastScore = snapshot.val().userScore;
+            userPastScore = snapshot.val().userScore * -1;
         }
         console.log(userPastScore)
         if (userPastScore < score || userPastScore == 0) {
