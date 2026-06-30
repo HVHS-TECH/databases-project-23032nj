@@ -63,7 +63,7 @@ function setup() {
   //running block hit function
   blockHit();
 
-  
+
 } //setup() finished
 
 /*******************************************************/
@@ -98,7 +98,7 @@ function createPowerUpBlocks() {
     // choose a random row and column
     let row = Math.round(random(0, 3));
     let column = Math.round(random(0, 6));
- 
+
     //using the getPowerUpBlock function, check if there is already a powerUpBlock at this row and column 
     let existingPowerBlock = getPowerUpBlock(row, column);
     //if there isn't already a powerUpBlock at this position, create a powerUpBlock and push it to the powerUpBlocks array
@@ -106,7 +106,7 @@ function createPowerUpBlocks() {
       let powerUpBlock = {}
       powerUpBlock.row = row;
       powerUpBlock.column = column;
-      powerUpBlocks.push(powerUpBlock); 
+      powerUpBlocks.push(powerUpBlock);
     }
   }
 }
@@ -151,7 +151,7 @@ function blockCreate() {
         block.color = '#bc8dfd';
       } else {
         block.color = blockRowColor;
-      }    
+      }
       //store the row and column info with the block so we can check it later
       block.row = row;
       block.column = column;
@@ -170,16 +170,16 @@ function blockCreate() {
 function blockHit() {
   blockGroup.collides(ball, ballCollideBlock);
 
-  function ballCollideBlock (block, ball) {
+  function ballCollideBlock(block, ball) {
     block.remove();
     let powerUpBlock = getPowerUpBlock(block.row, block.column)
     if (powerUpBlock != undefined) {
       //if it's a powerUpBlock
-        score = score + 5;
-      } else {
-        //if it's a normal block
-        score = score + 1;
-      }
+      score = score + 5;
+    } else {
+      //if it's a normal block
+      score = score + 1;
+    }
   }
 }
 
@@ -188,18 +188,18 @@ function blockHit() {
 //when the ball collides with the bottom wall, removing elements, resetting the game, and showing the end screen
 /*******************************************************/
 
-  function functionGameEnd(wallBottom, Ball) {
-    ball.remove();
-    platform.remove()
-    blockCreateRound = 0;
-    //revealing the endscreen
-    gameEnd.style.display = "block";
+function functionGameEnd(wallBottom, Ball) {
+  ball.remove();
+  platform.remove()
+  blockCreateRound = 0;
+  //revealing the endscreen
+  gameEnd.style.display = "block";
 
-    //database writes
-    fb_writeBlockBreakerScore(score);
+  //database writes
+  fb_writeBlockBreakerScore(score);
 
 
-  }
+}
 
 /*******************************************************/
 // draw()
@@ -231,7 +231,7 @@ function draw() {
     atLeftEdge = true;
   }
 
-   //move the platform left and right when the left and right arrows are pressed
+  //move the platform left and right when the left and right arrows are pressed
   if (kb.pressing('left') && atLeftEdge == false) {
     platform.vel.x = '-8';
   }
@@ -245,13 +245,13 @@ function draw() {
 
   if (kb.released('right')) {
     platform.vel.x = '0';
-  } 
+  }
 
   //At the start of each round, when space is pressed ball starts moving
   if (kb.presses('space') && (spaceReturn == false)) {
     let ballVelocityX = random(-6, 6);
     ball.bounciness = 1;
-    ball.vel.y = blockCreateRound -0.5;
+    ball.vel.y = blockCreateRound - 0.5;
     ball.vel.x = ballVelocityX;
     ball.friction = 0;
     ball.drag = 0;

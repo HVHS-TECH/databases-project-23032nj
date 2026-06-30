@@ -36,16 +36,15 @@ function readBlockBreakerLeaderboard() {
 }
 
 async function readLeaderboard() {
-  console.log("Reading sorted high scores");
   const snapshotScores = await firebase.database()
-    .ref('/gameScores/'+gamePick)
+    .ref('/gameScores/' + gamePick)
     .orderByChild('userScore')
     .limitToFirst(3)
     .once('value');
 
   snapshotUsers = await firebase.database().ref('/users').once('value')
-  
-  displayLeaderboard(snapshotScores);    
+
+  displayLeaderboard(snapshotScores);
 }
 
 function displayLeaderboard(snapshotScores) {

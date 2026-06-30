@@ -14,5 +14,5 @@ const firebaseConfig = {
   messagingSenderId: "94059285932",
   appId: "1:94059285932:web:32ea40009f494c429e3e09"
 };
-  //Set up the connection to your Firebase Realtime Database
+//Set up the connection to your Firebase Realtime Database
 firebase.initializeApp(firebaseConfig);

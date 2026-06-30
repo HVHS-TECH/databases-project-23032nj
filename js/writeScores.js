@@ -11,14 +11,12 @@ function fb_writeGeoDashScore() {
     function displayScore(snapshot) {
         var checkUserPastScore = snapshot.val();
         var userPastScore;
-        if(checkUserPastScore == null) {
-            console.log("past score is null")
+        if (checkUserPastScore == null) {
             userPastScore = 0
         }
         else {
             userPastScore = snapshot.val().userScore * -1;
         }
-        console.log(userPastScore)
         if (userPastScore < score || userPastScore == 0) {
             firebase.database().ref('/gameScores/geoDash/' + userUID).update({
                 userScore: score * -1
@@ -35,14 +33,12 @@ function fb_writeBlockBreakerScore() {
     function displayScore(snapshot) {
         var checkUserPastScore = snapshot.val();
         var userPastScore;
-        if(checkUserPastScore == null) {
-            console.log("past score is null")
+        if (checkUserPastScore == null) {
             userPastScore = 0
         }
         else {
             userPastScore = snapshot.val().userScore * -1;
         }
-        console.log(userPastScore)
         if (userPastScore < score || userPastScore == 0) {
             firebase.database().ref('/gameScores/blockBreaker/' + userUID).update({
                 userScore: score * -1

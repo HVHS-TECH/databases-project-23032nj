@@ -20,23 +20,19 @@ let userProfilePicture
 ***********************************/
 
 function authenticateLogin() {
-    console.log("Logging in user")
     authenticationListner = firebase.auth().onAuthStateChanged(handleLogin)
 }
 
 function handleLogin(_user) {
     if (_user) {
         GLOBAL_user = _user;
-        console.log("User is logged in")
         userDisplayName = GLOBAL_user.displayName
         userEmail = GLOBAL_user.email
         userUID = GLOBAL_user.uid
         userProfilePicture = GLOBAL_user.photoURL
-        console.log(userUID)
 
         //if the user in on the login page, check if they're already in the database
         if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('/index.html')) {
-            console.log('checking')
             checkUser()
         }
 
@@ -46,7 +42,6 @@ function handleLogin(_user) {
         }
 
     } else {
-        console.log("User is not logged in, logging the user in now")
         popupLogin();
     }
 }
@@ -60,7 +55,6 @@ function popupLogin() {
 
     firebase.auth().signInWithPopup(provider).then((result) => {
         GLOBAL_user = result.user;
-        console.log("User is logged in")
         userDisplayName = GLOBAL_user.displayName
         userEmail = GLOBAL_user.email
         userUID = GLOBAL_user.uid

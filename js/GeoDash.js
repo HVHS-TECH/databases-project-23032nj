@@ -13,7 +13,6 @@ console.log("Running the game");
 function endGame(_player, _obstacle) {
     var userPastScore;
 
-    console.log("Game ended, you got " + score + " points.")
     screenSelector = "end";
     player.remove();
     obstacles.removeAll();
