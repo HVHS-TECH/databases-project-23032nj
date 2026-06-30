@@ -24,6 +24,9 @@ async function submitUserDetailsForm() {
     if (userAge == "") {
         alert("Please enter an age");
         return;
+    } else if (userAge < 16) {
+        alert("You have to be 16 or older to use this site")
+        return;
     }
 
     //save the users info from login, and form to the database
