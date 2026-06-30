@@ -67,7 +67,7 @@ function popupLogin() {
 // welcomes the user
 ***********************************/
 function writeWelcome() {
-    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! <p>"
+    HTML_OUTPUT.innerHTML += "<p> Welcome " + userDisplayName + "! You can play a game or view a leaderboard <p>"
 }
 
 /**********************************

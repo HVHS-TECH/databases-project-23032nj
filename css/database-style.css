@@ -18,11 +18,13 @@ body {
   font-family: "Atma", sans-serif;
   text-align: center;
   font-size: 30px;
+  margin-bottom: 0;
 }
 
 .textstyle {
   text-align: center;
   font-family: "Atma", sans-serif;
+  font-size: 25px;
 }
 
 button {
