@@ -38,5 +38,5 @@ async function submitUserDetailsForm() {
         profilePicture: userProfilePicture
     })
 
-    window.location.href = "../HTML/game-selection.html"
+    window.location.href = "game-selection.html"
 }
