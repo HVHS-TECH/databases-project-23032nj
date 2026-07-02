@@ -45,6 +45,7 @@ button {
 
 button:hover {
   background-color: #e75b70;
+  cursor: pointer;
 }
 
 .containerOne {
