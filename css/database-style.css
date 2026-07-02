@@ -19,6 +19,13 @@ body {
   text-align: center;
   font-size: 30px;
   margin-bottom: 0;
+  margin-top: 0;
+}
+
+.secondheaderstylelogin {
+  font-family: "Atma", sans-serif;
+  text-align: center;
+  font-size: 30px;
 }
 
 .textstyle {
